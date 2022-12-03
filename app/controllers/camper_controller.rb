@@ -1,2 +1,0 @@
-class CamperController < ApplicationController
-end
