@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_03_105523) do
+ActiveRecord::Schema.define(version: 2022_12_03_111325) do
 
   create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.integer "difficulty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -20,6 +22,8 @@ ActiveRecord::Schema.define(version: 2022_12_03_105523) do
   create_table "campers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.integer "age"
   end
 
   create_table "signups", force: :cascade do |t|
@@ -27,6 +31,7 @@ ActiveRecord::Schema.define(version: 2022_12_03_105523) do
     t.integer "camper_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "time"
   end
 
 end
