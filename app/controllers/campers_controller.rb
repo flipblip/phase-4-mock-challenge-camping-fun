@@ -14,7 +14,7 @@ class CampersController < ApplicationController
     end
 
     def create
-        camper = Camper.create(camper_params)
+        camper = Camper.create!(camper_params)
         render json: camper, status: :created
     end
 
@@ -22,5 +22,9 @@ class CampersController < ApplicationController
 
     def camper_params
         params.permit(:name, :age)
+    end
+
+    def render_unprocessable_entity_response(exception)
+        render json: {errors:[exception.record.errors]}, status: :unprocessable_entity
     end
 end
